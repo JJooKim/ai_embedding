@@ -63,19 +63,23 @@ int main(void)
     int hours = timeInfo->tm_hour;
     int minutes = timeInfo->tm_min;
 
+
+    //printf("hours: %d, minutes: %d", hours, minutes);
+
+
     // Display the hours and minutes
     
     clear_pin();
-    digitalWrite(PDP2, 0);    // Enable the first digit (leftmost)
-    digitalWrite(PDP3, 0);
-    digitalWrite(PDP4, 0);
+    //digitalWrite(PDP2, 0);    // Enable the first digit (leftmost)
+    //digitalWrite(PDP3, 0);
+    //digitalWrite(PDP4, 0);
     set_pin(hours / 10);       // Display tens digit of hours
     delay(1000);                  // Delay to display the digit
     
     clear_pin();
-    digitalWrite(PDP1, 0);    // Enable the first digit (leftmost)
-    digitalWrite(PDP3, 0);
-    digitalWrite(PDP4, 0);
+    //digitalWrite(PDP1, 0);    // Enable the first digit (leftmost)
+    //digitalWrite(PDP3, 0);
+    //digitalWrite(PDP4, 0);
     set_pin(hours % 10);       // Display tens digit of hours
     delay(1000);                  // Delay to display the digit
 
