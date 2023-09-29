@@ -83,7 +83,9 @@ int main(void)
         set_pin(minutes % 10);     
         digitalWrite(PDP4, 1);   
         delay(5);                
-        digitalWrite(PDP4, 0);  
+        digitalWrite(PDP4, 0); 
+
+        delay(5); 
 
     }
 
