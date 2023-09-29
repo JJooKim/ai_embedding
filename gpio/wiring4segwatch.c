@@ -53,94 +53,94 @@ int main(void)
     wiringPiSetup();
     init_pin();
 
-    //clear_pin();
+    // //clear_pin();
 
-    time_t curr_time;
-    time(&curr_time);
-
-
-    struct tm *timeInfo;
-
-    timeInfo = localtime(&curr_time); // Convert to local time
-
-    int hours = timeInfo->tm_hour;
-    int minutes = timeInfo->tm_min;
+    // time_t curr_time;
+    // time(&curr_time);
 
 
-    //printf("hours: %d, minutes: %d", hours, minutes);
+    // struct tm *timeInfo;
+
+    // timeInfo = localtime(&curr_time); // Convert to local time
+
+    // int hours = timeInfo->tm_hour;
+    // int minutes = timeInfo->tm_min;
 
 
-    // Display the hours and minutes
+    // //printf("hours: %d, minutes: %d", hours, minutes);
+
+
+    // // Display the hours and minutes
     
-    clear_pin();
-    digitalWrite(PDP2, 0);    // Enable the first digit (leftmost)
-    digitalWrite(PDP3, 0);
-    digitalWrite(PDP4, 0);
-    set_pin(hours / 10);       // Display tens digit of hours
-    delay(5);                  // Delay to display the digit
+    // clear_pin();
+    // digitalWrite(PDP2, 0);    // Enable the first digit (leftmost)
+    // digitalWrite(PDP3, 0);
+    // digitalWrite(PDP4, 0);
+    // set_pin(hours / 10);       // Display tens digit of hours
+    // delay(5);                  // Delay to display the digit
     
-    clear_pin();
-    digitalWrite(PDP1, 0);    // Enable the first digit (leftmost)
-    digitalWrite(PDP3, 0);
-    digitalWrite(PDP4, 0);
-    set_pin(hours % 10);       // Display tens digit of hours
-    delay(5);                  // Delay to display the digit
+    // clear_pin();
+    // digitalWrite(PDP1, 0);    // Enable the first digit (leftmost)
+    // digitalWrite(PDP3, 0);
+    // digitalWrite(PDP4, 0);
+    // set_pin(hours % 10);       // Display tens digit of hours
+    // delay(5);                  // Delay to display the digit
 
 
-    clear_pin();
-    digitalWrite(PDP1, 0);    // Enable the first digit (leftmost)
-    digitalWrite(PDP2, 0);
-    digitalWrite(PDP4, 0);
-    set_pin(minutes / 10);       // Display tens digit of hours
-    delay(5);                  // Delay to display the digit
+    // clear_pin();
+    // digitalWrite(PDP1, 0);    // Enable the first digit (leftmost)
+    // digitalWrite(PDP2, 0);
+    // digitalWrite(PDP4, 0);
+    // set_pin(minutes / 10);       // Display tens digit of hours
+    // delay(5);                  // Delay to display the digit
 
 
-    clear_pin();
-    digitalWrite(PDP1, 0);    // Enable the first digit (leftmost)
-    digitalWrite(PDP2, 0);
-    digitalWrite(PDP3, 0);
-    set_pin(minutes / 10);       // Display tens digit of hours
-    delay(5);                  // Delay to display the digit
+    // clear_pin();
+    // digitalWrite(PDP1, 0);    // Enable the first digit (leftmost)
+    // digitalWrite(PDP2, 0);
+    // digitalWrite(PDP3, 0);
+    // set_pin(minutes / 10);       // Display tens digit of hours
+    // delay(5);                  // Delay to display the digit
 
-    delay(1000); // Delay for one second
-
-
-    // while (1) // 무한 루프
-    // {
-    //     time_t curr_time;
-    //     time(&curr_time)
+    // delay(1000); // Delay for one second
 
 
-    //     struct tm *timeInfo;
+    while (1) // 무한 루프
+    {
+        time_t curr_time;
+        time(&curr_time)
 
-    //     timeInfo = localtime(&curr_time); // Convert to local time
 
-    //     int hours = timeInfo->tm_hour;
-    //     int minutes = timeInfo->tm_min;
+        struct tm *timeInfo;
 
-    //     // Display the hours and minutes
-    //     set_pin(hours / 10);       // Display tens digit of hours
-    //     digitalWrite(PDP1, 1);    // Enable the first digit (leftmost)
-    //     delay(5);                  // Delay to display the digit
-    //     digitalWrite(PDP1, 0);    // Disable the first digit
+        timeInfo = localtime(&curr_time); // Convert to local time
 
-    //     set_pin(hours % 10);       // Display ones digit of hours
-    //     digitalWrite(PDP2, 1);    // Enable the second digit
-    //     delay(5);                  // Delay to display the digit
-    //     digitalWrite(PDP2, 0);    // Disable the second digit
+        int hours = timeInfo->tm_hour;
+        int minutes = timeInfo->tm_min;
 
-    //     set_pin(minutes / 10);     // Display tens digit of minutes
-    //     digitalWrite(PDP3, 1);    // Enable the third digit
-    //     delay(5);                  // Delay to display the digit
-    //     digitalWrite(PDP3, 0);    // Disable the third digit
+        // Display the hours and minutes
+        set_pin(hours / 10);       // Display tens digit of hours
+        digitalWrite(PDP1, 1);    // Enable the first digit (leftmost)
+        delay(5);                  // Delay to display the digit
+        digitalWrite(PDP1, 0);    // Disable the first digit
 
-    //     set_pin(minutes % 10);     // Display ones digit of minutes
-    //     digitalWrite(PDP4, 1);    // Enable the fourth digit (rightmost)
-    //     delay(5);                  // Delay to display the digit
-    //     digitalWrite(PDP4, 0);    // Disable the fourth digit
+        set_pin(hours % 10);       // Display ones digit of hours
+        digitalWrite(PDP2, 1);    // Enable the second digit
+        delay(5);                  // Delay to display the digit
+        digitalWrite(PDP2, 0);    // Disable the second digit
 
-    //     delay(1000); // Delay for one second
-    // }
+        set_pin(minutes / 10);     // Display tens digit of minutes
+        digitalWrite(PDP3, 1);    // Enable the third digit
+        delay(5);                  // Delay to display the digit
+        digitalWrite(PDP3, 0);    // Disable the third digit
+
+        set_pin(minutes % 10);     // Display ones digit of minutes
+        digitalWrite(PDP4, 1);    // Enable the fourth digit (rightmost)
+        delay(5);                  // Delay to display the digit
+        digitalWrite(PDP4, 0);    // Disable the fourth digit
+
+        delay(1000); // Delay for one second
+    }
 
     return 0;
 }
