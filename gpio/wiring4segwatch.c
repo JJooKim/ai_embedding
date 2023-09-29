@@ -139,7 +139,7 @@ int main(void)
         delay(5);                  // Delay to display the digit
         digitalWrite(PDP4, 0);    // Disable the fourth digit
 
-        delay(1000); // Delay for one second
+        delay(10000); // Delay for one second
     }
 
     return 0;
