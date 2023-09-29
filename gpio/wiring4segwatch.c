@@ -108,7 +108,7 @@ int main(void)
     while (1) // 무한 루프
     {
         time_t curr_time;
-        time(&curr_time)
+        time(&curr_time);
 
 
         struct tm *timeInfo;
