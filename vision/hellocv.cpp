@@ -1,4 +1,4 @@
-#include <opencv4/highgui/highgui.hpp>
+#include <opencv2/highgui/highgui.hpp>
 
 using namespace cv;
 /* This line declares that you're using the cv namespace, which is short for "OpenCV." It means you can access OpenCV functions and classes without explicitly specifying the namespace each time.*/
