@@ -10,8 +10,7 @@ int main(int argc, const char** argv)
     }
     video.set(cv::CAP_PROP_FRAME_WIDTH, 640);
     cv::CascadeClassifier faceCascade;
-    if (!faceCascade.load("/usr/local/share/opencv4/haarcascades/haarcascade_frontalface_default.xm
-    l")) {
+    if (!faceCascade.load("/usr/local/share/opencv4/haarcascades/haarcascade_frontalface_default.xml")) {
         std::cerr << "Error loading Haar Cascade Classifier model." << std::endl;
         return -1;
     }
