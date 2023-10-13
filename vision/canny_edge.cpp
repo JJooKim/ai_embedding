@@ -3,6 +3,7 @@
 cv::Mat image;
 std::string title = "Canny";
 
+//Call back function
 void on(int value, void* userdata)
 {
   int th1 = cv::getTrackbarPos("canny low boundary", title);
