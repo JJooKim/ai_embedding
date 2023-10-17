@@ -14,7 +14,7 @@ static int Echo_Test()
   unsigned long TX_time = 0; // TX: Transmit
   unsigned long RX_time = 0; // RX: Receive
   float distance = 0;       
-  unsigned long timeout = 50000000;   // 50*10^6 us
+  unsigned long timeout = 50000000;   // 50*10^6 us == 50s
   unsigned long Wait_time=micros();
   /*
   The micros() function is a built-in function in many microcontroller libraries (e.g., Arduino) that returns the current time in microseconds since the microcontroller started running.
@@ -75,6 +75,18 @@ static int Echo_Test()
 
 int main()
 {
-  printf("HC-SR04 Ultra-sonic distance measure program \n");
-  if (wiring)
+  printf (" HC-SR04 Ultra-sonic distance measure program \n");
+  if (wiringPiSetup () == -1) {
+    exit(EXIT_FAILURE);
+  }
+  if (setuid(getuid()) < 0) {
+    perror("Dropping privileges failed.\n");
+    exit(EXIT_FAILURE);
+  }
+  for(;;){
+    Echo_Test();
+    delay(500); //500ms
+    //sleep(1);
+  }
+  return 0;
 }
