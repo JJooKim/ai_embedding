@@ -30,7 +30,7 @@ int main()
   }
 
   cv::namedWindow(title, cv::WINDOW_AUTOSIZE);
-  cv::imshow(title, image)
+  cv::imshow(title, image);
   cv::createTrackbar("canny low boundary", title, nullptr, 255, on);
   /*
   This line creates a trackbar in the GUI window with the title "Canny" (as specified by the title variable). This trackbar is labeled as "canny low boundary." It allows the user to interactively adjust a parameter related to the Canny edge detection algorithm.

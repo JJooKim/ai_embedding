@@ -26,7 +26,7 @@ void clear_pin ()
   for (i = 0; i < 8; i++)
       digitalWrite(pins[i], 1);
   for (i=0; i < 4; i++)
-      digitalWrite(pindps[i], 1);
+      digitalWrite(pindps[i], 0);
 }
 void set_pin (int n)
 {
@@ -51,7 +51,7 @@ int main(void)
   for (i=0; i < 4; i++)
   {
       clear_pin();
-      digitalWrite(pindps[i], 0); /* Choose only one display pin */
+      digitalWrite(pindps[i], 1); /* Choose only one display pin */
       set_pin (i+1);
       delay(1000);
   }
